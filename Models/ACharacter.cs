@@ -1,6 +1,6 @@
 ﻿using BLOC4.PP8_HeroEngine_FilesRazorQuest.Data;
 
-namespace BLOC3.PP7_HeroEngine.models;
+namespace HeroEngine.Core.Models;
 
 public abstract class ACharacter
 {
@@ -16,8 +16,8 @@ public abstract class ACharacter
     public int Level { get; set; }
     public int CurrentHp { get; set; }
     public int MaxHp { get; set; }
-    protected int Power { get; set; }
-    protected int Defense { get; set; }
+    public int Power { get; set; }
+    public int Defense { get; set; }
     public bool IsDefeated => CurrentHp <= 0;
     public virtual int Initiative => Power + MaxHp + Defense;
     

@@ -1,6 +1,6 @@
 ﻿using BLOC4.PP8_HeroEngine_FilesRazorQuest.models;
 
-namespace BLOC3.PP7_HeroEngine.models;
+namespace HeroEngine.Core.Models;
 
 public class Ability
 {

@@ -2,7 +2,7 @@
 using BLOC4.PP8_HeroEngine_FilesRazorQuest.Data;
 using BLOC4.PP8_HeroEngine_FilesRazorQuest.models;
 
-namespace BLOC3.PP7_HeroEngine.models;
+namespace HeroEngine.Core.Models;
 
 public class Mage : AHero, IAbility
 {

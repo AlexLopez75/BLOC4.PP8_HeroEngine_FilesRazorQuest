@@ -1,4 +1,4 @@
-﻿namespace BLOC3.PP7_HeroEngine.models;
+﻿namespace HeroEngine.Core.Models;
 
 public class Elite : AEnemy
 {

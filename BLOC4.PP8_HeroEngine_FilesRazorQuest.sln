@@ -1,8 +1,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.4.11626.88 stable
+VisualStudioVersion = 18.4.11626.88
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLOC4.PP8_HeroEngine_FilesRazorQuest", "BLOC4.PP8_HeroEngine_FilesRazorQuest.csproj", "{9772D8ED-BFF8-54E2-9B50-63BA83054CFA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeroEngine.Core", "HeroEngine.Core.csproj", "{9772D8ED-BFF8-54E2-9B50-63BA83054CFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeroEngine.Web", "HeroEngine.Web\HeroEngine.Web.csproj", "{DFF3C72E-59AE-4CB9-8D9A-2E2478F99D92}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,6 +16,10 @@ Global
 		{9772D8ED-BFF8-54E2-9B50-63BA83054CFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9772D8ED-BFF8-54E2-9B50-63BA83054CFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9772D8ED-BFF8-54E2-9B50-63BA83054CFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFF3C72E-59AE-4CB9-8D9A-2E2478F99D92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFF3C72E-59AE-4CB9-8D9A-2E2478F99D92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFF3C72E-59AE-4CB9-8D9A-2E2478F99D92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFF3C72E-59AE-4CB9-8D9A-2E2478F99D92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
