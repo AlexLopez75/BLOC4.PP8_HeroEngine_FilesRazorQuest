@@ -1,5 +1,5 @@
 ﻿using System.Net.Http.Headers;
-using BLOC3.PP7_HeroEngine.models;
+using HeroEngine.Core.Models;
 using BLOC4.PP8_HeroEngine_FilesRazorQuest.Combat;
 using BLOC4.PP8_HeroEngine_FilesRazorQuest.Data;
 using BLOC4.PP8_HeroEngine_FilesRazorQuest.models;

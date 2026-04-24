@@ -1,0 +1,72 @@
+﻿@page "{name}"
+@using HeroEngine.Core.Models
+@model HeroEngine.Web.Pages.Heroes.DetailModel
+@{
+    ViewData["Title"] = "Hero Detail";
+}
+
+<div class="containte mt-4">
+    <h2>Hero detials: @Model.Hero.Name</h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card bg-light">
+                <div class="card-body">
+                    <h5 class="card-title">Stats</h5>
+                    <p class="card-text">Class: @Model.Hero.GetType().Name</p>
+                    <p class="card-text">Level: @Model.Hero.Level</p>
+                    <p class="card-text">HP: @Model.Hero.MaxHp</p>
+                    <p class="card-text">Power: @Model.Hero.Power</p>
+                    <p class="card-text">Defense: @Model.Hero.Defense</p>
+                </div>
+            </div>
+        </div>
+        @if (Model.Hero is Mage mage)
+        {
+            <div class="alert alert-info">
+                <strong>Mana:</strong> @mage.MaxMana | <strong>Arch Level:</strong> @mage.ArchLevel
+            </div>
+            <h5>Spells:</h5>
+            <div class="list-group">
+                @if (mage.AbilityDictionary.Count > 0)
+                {
+                    @foreach (var entry in mage.AbilityDictionary)
+                    {
+                        <div class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h6 class="mb-1">@entry.Value.Name</h6>
+                                <small class="text-primary">Cost: @entry.Value.Cost MP</small>
+                            </div>
+                            <p class="mb-1 text-muted small">Tipus: @entry.Value.Type | Poder: @entry.Value.AbilityPower</p>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <p class="text-muted italic">This mage does not know any abilities yet.</p>
+                }
+            </div>
+        }
+        else if (Model.Hero is Warrior warrior)
+        {
+            <div class="card border-danger">
+                <div class="card-body">
+                    <p><strong>Armor:</strong> @warrior.Armor</p>
+                    <p><strong>Battle Cry:</strong> <span class="fst-italic">"@warrior.BattleCry"</span></p>
+                    <p class="text-muted small">The warrior doesn't use active abilities, but has an armor that reduces damage</p>
+                </div>
+            </div>
+        }
+        else if (Model.Hero is Rogue rogue)
+        {
+            <div class="card border-success">
+                <div class="card-body">
+                    <p><strong>Number of daggers:</strong> @rogue.NumDaggers</p>
+                    <p><strong>Damage multiplier:</strong> x @rogue.MultDamage</p>
+                    <p class="text-muted small">The rogue doesn't use active abilities, but has an active damage mutliplier</p>
+                </div>
+            </div>
+        }
+    </div>
+    <a asp-page="./Index" class="btn btn-secondary mt-3">Back to List</a>
+</div>

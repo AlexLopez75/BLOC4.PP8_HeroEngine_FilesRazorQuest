@@ -1,4 +1,4 @@
-﻿namespace BLOC3.PP7_HeroEngine.models;
+﻿namespace HeroEngine.Core.Models;
 
 public abstract class AEnemy : ACharacter
 {

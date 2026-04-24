@@ -1,10 +1,27 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Index";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Welcome to HeroEngine</h1>
+    <p>You can manage your heroes and embark on epic quests.</p>
 </div>
+
+<div class="row mt-5">
+    <div class="card-body">
+        <h5 class="card-title">Registered Heroes</h5>
+        <p class="card-text display-6">@Model.HeroCount</p>
+        <a asp-page="/Heroes/Index" class="btn btn-light btn-sm">See heroes</a>
+    </div>
+
+    <div class="col-md-8">
+        <h3>Hero List</h3>
+        <ul class="list-group">
+            @foreach (var hero in Model.HeroList)
+            {
+                <li class="list-group-item">⚔️ @hero</li>
+            }
+        </ul>
+    </div>

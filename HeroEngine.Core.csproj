@@ -5,6 +5,13 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <RootNamespace>HeroEngine.Core</RootNamespace>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="HeroEngine.Web\**" />
+    <EmbeddedResource Remove="HeroEngine.Web\**" />
+    <None Remove="HeroEngine.Web\**" />
+  </ItemGroup>
 
 </Project>
