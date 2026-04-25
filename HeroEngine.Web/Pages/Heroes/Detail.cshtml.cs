@@ -1,6 +1,8 @@
 using HeroEngine.Core.Models;
+using HeroEngine.Core.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Linq;
 
 namespace HeroEngine.Web.Pages.Heroes
 {
@@ -15,9 +17,13 @@ namespace HeroEngine.Web.Pages.Heroes
                 return;
             }
 
-            if (name == "Grog") Hero = new Warrior("Grog", "Hyaaa");
-            else if (name == "Merlí") Hero = new Mage("Merlí");
-            else if (name == "Shadow") Hero = new Rogue(name, 10);
+            Hero = HeroRepository.GetAll().FirstOrDefault(h => h.Name == name);
+
+            if (Hero == null)
+            {
+                Response.Redirect("/Heroes/Index");
+                return;
+            }
         }
     }
 }

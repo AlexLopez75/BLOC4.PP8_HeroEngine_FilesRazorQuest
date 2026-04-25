@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc;
-using HeroEngine.Web.Data;
+using HeroEngine.Core.Data;
 using HeroEngine.Core.Models;
 using BLOC4.PP8_HeroEngine_FilesRazorQuest.Combat;
 
@@ -13,12 +13,12 @@ namespace HeroEngine.Web.Pages.Combat
 
         public void OnGet()
         {
-            AvailableHeroes = FakeDatabase.Heroes;
+            //AvailableHeroes = FakeDatabase.Heroes;
         }
 
         public IActionResult OnPost()
         {
-            AvailableHeroes = FakeDatabase.Heroes;
+           // AvailableHeroes = FakeDatabase.Heroes;
 
             if (AvailableHeroes.Count == 0)
             {

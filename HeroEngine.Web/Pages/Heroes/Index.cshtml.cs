@@ -1,4 +1,5 @@
 using HeroEngine.Core.Models;
+using HeroEngine.Core.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -9,12 +10,17 @@ namespace HeroEngine.Web.Pages.Heroes
         public List<AHero> HeroList { get; set; }
         public void OnGet()
         {
-            HeroList = new List<AHero>
+            HeroList = HeroRepository.GetAll();
+        }
+
+        public IActionResult OnPostDelete(string name)
+        {
+            if (!string.IsNullOrEmpty(name))
             {
-                new Warrior("Grog", "Hyaaa"),
-                new Mage("Merlí"),
-                new Rogue("Shadow", 10)
-            };
+                HeroRepository.Delete(name);
+            }
+
+            return RedirectToPage();
         }
     }
 }

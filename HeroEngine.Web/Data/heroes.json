@@ -1,0 +1,69 @@
+[
+  {
+    "Name": "Helo",
+    "Type": "Mage",
+    "Level": 1,
+    "MaxHp": 200,
+    "Power": 20,
+    "Defense": 20,
+    "Armor": 0,
+    "BattleCry": null,
+    "MaxMana": 80,
+    "ArchLevel": 1,
+    "Abilities": [
+      {
+        "Name": "Fireball",
+        "Type": "Attack",
+        "Rarity": "COMMON",
+        "Cost": 5,
+        "AbilityPower": 0
+      },
+      {
+        "Name": "Magic Shield",
+        "Type": "Defense",
+        "Rarity": "RARE",
+        "Cost": 15,
+        "AbilityPower": 0
+      },
+      {
+        "Name": "Heal",
+        "Type": "Healing",
+        "Rarity": "COMMON",
+        "Cost": 5,
+        "AbilityPower": 0
+      }
+    ],
+    "MultDamage": 0,
+    "NumDaggers": 0
+  },
+  {
+    "Name": "Portet",
+    "Type": "Rogue",
+    "Level": 1,
+    "MaxHp": 170,
+    "Power": 15,
+    "Defense": 25,
+    "Armor": 0,
+    "BattleCry": null,
+    "MaxMana": 0,
+    "ArchLevel": 0,
+    "Abilities": null,
+    "MultDamage": 3,
+    "NumDaggers": 10
+  },
+  {
+    "Name": "Molen",
+    "Type": "Warrior",
+    "Level": 1,
+    "MaxHp": 150,
+    "Power": 30,
+    "Defense": 15,
+    "Armor": 40,
+    "BattleCry": "For honor!",
+    "MaxMana": 0,
+    "ArchLevel": 0,
+    "Abilities": null,
+    "MultDamage": 0,
+    "NumDaggers": 0
+  }
+]

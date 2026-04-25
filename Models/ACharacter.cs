@@ -1,4 +1,4 @@
-﻿using BLOC4.PP8_HeroEngine_FilesRazorQuest.Data;
+﻿using HeroEngine.Core.Combat;
 
 namespace HeroEngine.Core.Models;
 

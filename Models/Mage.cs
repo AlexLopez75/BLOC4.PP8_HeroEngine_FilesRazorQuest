@@ -1,6 +1,6 @@
 ﻿using System.Text;
-using BLOC4.PP8_HeroEngine_FilesRazorQuest.Data;
 using BLOC4.PP8_HeroEngine_FilesRazorQuest.models;
+using HeroEngine.Core.Combat;
 
 namespace HeroEngine.Core.Models;
 
