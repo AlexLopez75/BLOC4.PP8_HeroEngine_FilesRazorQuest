@@ -41,10 +41,6 @@ public class BattleEngine
     {
         BattleLogger.Initialize();
         
-        BattleLogger.Log(separator);
-        BattleLogger.Log(battleStartMSG);
-        BattleLogger.Log(separator);
-        
         while (!IsBattleFinished())
         {
             PlayRound();

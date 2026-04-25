@@ -18,10 +18,10 @@
                 @foreach (var hero in Model.AvailableHeroes)
                 {
                     <li class="list-group-item bg-secondary text-white border-dark">
-                        <strong>@hero.Name</strong> 
+                        <strong>@hero.Name</strong>
                         <span class="badge bg-info text-dark float-end">Lvl @hero.Level</span>
                         <br>
-                        <small class="text-light">Classe: @hero.GetType().Name | HP: @hero.MaxHp</small>
+                        <small class="text-light">Class: @hero.GetType().Name | HP: @hero.MaxHp</small>
                     </li>
                 }
             </ul>
@@ -33,12 +33,41 @@
         
         <div class="col-md-5 text-center">
             <h4 class="text-danger fw-bold mb-3">The Enemy</h4>
-            <div class="card bg-danger text-white border-0 shadow">
-                <div class="card-body py-5">
+    
+            <div class="card bg-danger text-white border-0 shadow mb-3">
+                <div class="card-body py-3">
                     <h3 class="card-title m-0 fw-bold">🐛 PRIMORDIAL BUG</h3>
-                    <p class="small m-0 mt-2">HP: Unknown</p>
+                    @if (Model.EnemyTeam != null && Model.EnemyTeam.Count > 0)
+                    {
+                        <span class="badge bg-dark mt-2">Horda de @Model.EnemyTeam.Count enemigos</span>
+                    }
                 </div>
             </div>
+
+            @if (Model.EnemyTeam != null && Model.EnemyTeam.Count > 0)
+            {
+                <ul class="list-group list-group-flush rounded text-start shadow border border-danger">
+                    @foreach (var enemy in Model.EnemyTeam)
+                    {
+                        <li class="list-group-item bg-dark text-danger border-danger">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <strong>@enemy.Name</strong>
+                                    <br />
+                                    <small class="text-light">HP: @enemy.MaxHp | Def: @enemy.Defense</small>
+                                </div>
+                                <span class="badge bg-danger text-white">@enemy.GetType().Name</span>
+                            </div>
+                        </li>
+                    }
+                </ul>
+            }
+            else
+            {
+                <div class="p-4 border border-secondary border-dashed rounded text-secondary">
+                    <p class="m-0 italic">Waiting for simulation to start...</p>
+                </div>
+            }
         </div>
     </div>
     
@@ -68,7 +97,7 @@
                 }
                 else if (log.Contains("[SYSTEM]"))
                 {
-                    <p class="mb-1 text-info">@log</p>
+                    <p class="mb-1 text-secondary">@log</p>
                 }
                 else
                 {

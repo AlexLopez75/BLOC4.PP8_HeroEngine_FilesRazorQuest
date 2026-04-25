@@ -19,7 +19,8 @@ public abstract class ACharacter
     public int Power { get; set; }
     public int Defense { get; set; }
     public bool IsDefeated => CurrentHp <= 0;
-    public virtual int Initiative => Power + MaxHp + Defense;
+    public int InitiativeModifier { get; set; } = 0;
+    public virtual int Initiative => Power + MaxHp + Defense + InitiativeModifier;
     
     protected ACharacter(string name)
     {
