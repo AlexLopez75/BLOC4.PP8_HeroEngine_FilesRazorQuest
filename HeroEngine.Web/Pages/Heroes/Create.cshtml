@@ -12,21 +12,31 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
             <div class="mb-3">
-                <label asp-for="Name" class="form-label">Nom de l'Heroi</label>
-                <input asp-for="Name" class="form-control" placeholder="Ex: Grog el Bàrbar" />
+                <label asp-for="Name" class="form-label">Hero name</label>
+                <input asp-for="Name" class="form-control" placeholder="Ex: Grog the Barbarian" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
 
             <div class="mb-3">
-                <label asp-for="SelectedClass" class="form-label">Classe</label>
-                <select asp-for="SelectedClass" class="form-select">
-                    <option value="">-- Selecciona una classe --</option>
+                <label asp-for="SelectedClass" class="form-label">Class</label>
+                <select asp-for="SelectedClass" id="classSelect" class="form-select">
+                    <option value="">-- Select a class --</option>
                     @foreach (var classe in Model.AvailableClasses)
                     {
                         <option value="@classe">@classe</option>
                     }
                 </select>
                 <span asp-validation-for="SelectedClass" class="text-danger"></span>
+            </div>
+
+            <div id="warriorFields" class="mb-3" style="display:none;">
+                <label class="form-label">Battle Cry</label>
+                <input asp-for="BattleCry" class="form-control" placeholder="Ex: ¡Hyaaaa!" />
+            </div>
+
+            <div id="rogueFields" class="mb-3" style="display:none;">
+                <label class="form-label">Number of daggesrs</label>
+                <input asp-for="NumDaggers" type="number" class="form-control" min="1" max="10" />
             </div>
 
             <div class="mt-4">
@@ -45,5 +55,21 @@
 </div>
 
 @section Scripts {
-    <partial name="_ValidationScriptsPartial" />
+    <script>
+        // Function to show/hide fields based on the selected class
+        document.getElementById("classSelect").addEventListener("change", function () {
+            const selectedClass = this.value;
+            
+            // Hide all fields first
+            document.getElementById("warriorFields").style.display = "none";
+            document.getElementById("rogueFields").style.display = "none";
+
+            // Show the corresponding fields
+            if (selectedClass === "Warrior") {
+                document.getElementById("warriorFields").style.display = "block";
+            } else if (selectedClass === "Rogue") {
+                document.getElementById("rogueFields").style.display = "block";
+            }
+        });
+    </script>
 }

@@ -29,6 +29,9 @@
                 <td>@hero.MaxHp</td>
                 <td>
                     <a asp-page="/Heroes/Detail" asp-route-name="@hero.Name" class="btn btn-info btn-sm">Details</a>
+                    <form method="post" asp-page-handler="Delete" asp-route-name="@hero.Name" class="d-inline" onsubmit="return confirm('Are you sure you want to delete @hero.Name?');">
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </form>
                 </td>
             </tr>
         }

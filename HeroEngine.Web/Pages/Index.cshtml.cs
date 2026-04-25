@@ -1,24 +1,18 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using HeroEngine.Core.Models;
+using HeroEngine.Core.Data;
 
 namespace HeroEngine.Web.Pages
 {
     public class IndexModel : PageModel
     {
+        public List<AHero> HeroList { get; set; }
         public int HeroCount { get; set; }
-        public List<string> HeroList { get; set; }
 
         public void OnGet()
         {
-            // Simulamos unos datos por ahora (más adelante los leerás de tu carpeta Data)
-            HeroCount = 3;
-            HeroList = new List<string>
-            {
-                "Grog",
-                "Merlí",
-                "Shadow"
-
-            };
+            HeroList = HeroRepository.GetAll();
+            HeroCount = HeroList.Count;
         }
     }
 }

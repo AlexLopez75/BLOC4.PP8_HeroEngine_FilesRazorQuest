@@ -10,18 +10,46 @@
 </div>
 
 <div class="row mt-5">
-    <div class="card-body">
-        <h5 class="card-title">Registered Heroes</h5>
-        <p class="card-text display-6">@Model.HeroCount</p>
-        <a asp-page="/Heroes/Index" class="btn btn-light btn-sm">See heroes</a>
+    <div class="col-md-4 mb-4">
+        <div class="card bg-primary text-white text-center shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Registered Heroes</h5>
+                <p class="card-text display-4 fw-bold">@Model.HeroCount</p>
+                <a asp-page="/Heroes/Index" class="btn btn-light">See heroes</a>
+            </div>
+        </div>
     </div>
 
     <div class="col-md-8">
         <h3>Hero List</h3>
-        <ul class="list-group">
-            @foreach (var hero in Model.HeroList)
+        <ul class="list-group shadow-sm">
+            @if (Model.HeroList != null && Model.HeroList.Any())
             {
-                <li class="list-group-item">⚔️ @hero</li>
+                @foreach (var hero in Model.HeroList)
+                {
+                    // 1. Averiguamos la clase del héroe
+                    string heroClass = hero.GetType().Name;
+                    
+                    // 2. Asignamos el emoji correspondiente
+                    string emoji = "👤"; // Por defecto
+                    if (heroClass == "Warrior") emoji = "⚔️";
+                    else if (heroClass == "Mage") emoji = "🔮";
+                    else if (heroClass == "Rogue") emoji = "🗡️";
+
+                    // 3. Mostramos la información de forma elegante
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span>
+                            <span class="fs-5 me-2">@emoji</span> 
+                            <strong>@hero.Name</strong>
+                        </span>
+                        <span class="badge bg-secondary rounded-pill">@heroClass</span>
+                    </li>
+                }
+            }
+            else
+            {
+                <li class="list-group-item text-muted fst-italic">No heroes registered yet. Go forge one!</li>
             }
         </ul>
     </div>
+</div>

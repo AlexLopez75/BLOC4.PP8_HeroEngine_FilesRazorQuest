@@ -1,9 +1,20 @@
+using HeroEngine.Core.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 
 var app = builder.Build();
+
+try
+{
+    HeroRepository.LoadAll();
+}
+catch (Exception ex)
+{
+    Console.WriteLine("Note: Could not load the JSON (it's normal if it's the first time).");
+}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

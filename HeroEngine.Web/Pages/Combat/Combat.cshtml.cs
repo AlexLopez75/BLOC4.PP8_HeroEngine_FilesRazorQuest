@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc;
-using HeroEngine.Web.Data;
+using HeroEngine.Core.Data;
 using HeroEngine.Core.Models;
 using BLOC4.PP8_HeroEngine_FilesRazorQuest.Combat;
 
