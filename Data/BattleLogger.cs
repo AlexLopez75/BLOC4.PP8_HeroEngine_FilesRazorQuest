@@ -8,7 +8,7 @@ public static class BattleLogger
     private const string filePath = "Files/battleLog.txt";
     private const string separator = "======================================================";
     private const string logInitializeMSG = "               BATTLE LOG INITIALIZED              ";
-    private const string fileNotFoundMSG = "[ERROR] Flie not found: {0}";
+    private const string fileNotFoundMSG = "[ERROR] File not found: {0}";
     private const string unableToWriteMSG = "[ERROR] Unable to write into log: {0}";
     
     /// <summary>
