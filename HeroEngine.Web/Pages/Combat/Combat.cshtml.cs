@@ -13,12 +13,12 @@ namespace HeroEngine.Web.Pages.Combat
 
         public void OnGet()
         {
-            AvailableHeroes = FakeDatabase.Heroes;
+            //AvailableHeroes = FakeDatabase.Heroes;
         }
 
         public IActionResult OnPost()
         {
-            AvailableHeroes = FakeDatabase.Heroes;
+           // AvailableHeroes = FakeDatabase.Heroes;
 
             if (AvailableHeroes.Count == 0)
             {

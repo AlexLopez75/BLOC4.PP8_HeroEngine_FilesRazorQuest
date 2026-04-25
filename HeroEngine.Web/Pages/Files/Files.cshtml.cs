@@ -12,6 +12,17 @@ namespace HeroEngine.Web.Pages.Files
             LogExists = System.IO.File.Exists(filePath);
         }
 
+        public IActionResult OnGetDownloadJson()
+        {
+            string filePath = Path.Combine(Directory.GetCurrentDirectory(), "Data", "heroes.json");
+
+            if (!System.IO.File.Exists(filePath))
+            {
+                return NotFound("The JSON file was not found.");
+            }
+            return PhysicalFile(filePath, "application/json", "heroes.json");
+        }
+
         public IActionResult OnPostDownloadLog()
         {
             string filePath = Path.Combine(Directory.GetCurrentDirectory(), "Files", "battleLog.txt");

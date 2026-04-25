@@ -1,4 +1,4 @@
-﻿namespace BLOC4.PP8_HeroEngine_FilesRazorQuest.Data;
+﻿namespace HeroEngine.Core.Combat;
 
 /// <summary>
 /// Provides static utility methods to log battle events simultaneously to the console and a local text file.
