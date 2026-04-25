@@ -8,7 +8,7 @@ namespace HeroEngine.Web.Pages.Files
         public bool LogExists { get; set; }
         public void OnGet()
         {
-            string filePath = Path.Combine(Directory.GetCurrentDirectory(), "Files", "battleLog.txt");
+            string filePath = Path.Combine(Directory.GetCurrentDirectory(), "Data", "battleLog.txt");
             LogExists = System.IO.File.Exists(filePath);
         }
 
@@ -25,7 +25,7 @@ namespace HeroEngine.Web.Pages.Files
 
         public IActionResult OnPostDownloadLog()
         {
-            string filePath = Path.Combine(Directory.GetCurrentDirectory(), "Files", "battleLog.txt");
+            string filePath = Path.Combine(Directory.GetCurrentDirectory(), "Data", "battleLog.txt");
             if (System.IO.File.Exists(filePath))
             {
                 byte[] fileBytes = System.IO.File.ReadAllBytes(filePath);

@@ -3,26 +3,28 @@ using Microsoft.AspNetCore.Mvc;
 using HeroEngine.Core.Data;
 using HeroEngine.Core.Models;
 using BLOC4.PP8_HeroEngine_FilesRazorQuest.Combat;
+using HeroEngine.Core.Combat;
 
 namespace HeroEngine.Web.Pages.Combat
 {
     public class CombatModel : PageModel
     {
-        public List<AHero> AvailableHeroes { get; set; }
+        public List<AHero> AvailableHeroes { get; set; } = new List<AHero>();
+        public List<ACharacter> EnemyTeam { get; set; } = new List<ACharacter>();
         public List<string> BattleLogs { get; set; } = new List<string>();
 
         public void OnGet()
         {
-            //AvailableHeroes = FakeDatabase.Heroes;
+            AvailableHeroes = HeroRepository.GetAll();
         }
 
         public IActionResult OnPost()
         {
-           // AvailableHeroes = FakeDatabase.Heroes;
+            AvailableHeroes = HeroRepository.GetAll();
 
-            if (AvailableHeroes.Count == 0)
+            if (AvailableHeroes == null || AvailableHeroes.Count == 0)
             {
-                ModelState.AddModelError(string.Empty, "There are no available heroes.");
+                ModelState.AddModelError(string.Empty, "No heroes available for combat.");
                 return Page();
             }
 
@@ -33,30 +35,45 @@ namespace HeroEngine.Web.Pages.Combat
 
             List<ACharacter> heroTeam = AvailableHeroes.Cast<ACharacter>().ToList();
 
-            ACharacter enemy = new Minion("Minion");
-            List<ACharacter> enemiesTeam = new List<ACharacter> { enemy };
+            Random rnd = new Random();
+            int amountOfEnemies = rnd.Next(1, 6);
 
-            if (!Directory.Exists("Files"))
+            for (int i = 1; i <= amountOfEnemies; i++)
             {
-                Directory.CreateDirectory("Files");
+                int enemyType = rnd.Next(1, 4);
+                ACharacter newEnemy;
+
+                switch (enemyType)
+                {
+                    case 1:
+                        newEnemy = new Minion($"Minion {i}");
+                        break;
+                    case 2:
+                        newEnemy = new Elite($"Elite {i}");
+                        break;
+                    default:
+                        newEnemy = new Boss($"Boss {i}");
+                        break;
+                }
+
+                newEnemy.InitiativeModifier = rnd.Next(1, 20);
+                EnemyTeam.Add((AEnemy)newEnemy);
+            }
+            BattleLogger.Initialize();
+
+            BattleEngine engine = new BattleEngine(heroTeam, EnemyTeam);
+            engine.StartBattle();
+
+            BattleLogs = BattleLogger.CurrentBattleLogs.ToList();
+            string dataFolderPath = Path.Combine(Directory.GetCurrentDirectory(), "Data");
+
+            if (!Directory.Exists(dataFolderPath))
+            {
+                Directory.CreateDirectory(dataFolderPath);
             }
 
-            TextWriter originalConsole = Console.Out;
-            using var consoleOutput = new StringWriter();
-            Console.SetOut(consoleOutput);
-
-            try
-            {
-                BattleEngine engine = new BattleEngine(heroTeam, enemiesTeam);
-                engine.StartBattle();
-            }
-            finally
-            {
-                Console.SetOut(originalConsole);
-            }
-
-            string rawOutput = consoleOutput.ToString();
-            BattleLogs = rawOutput.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries).ToList();
+            string logFilePath = Path.Combine(dataFolderPath, "battleLog.txt");
+            System.IO.File.WriteAllLines(logFilePath, BattleLogs);
 
             return Page();
         }

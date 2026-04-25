@@ -9,7 +9,7 @@
     <p class="lead">Download the registers of your battles, your heroes and their abilities, battle statistics and game config.</p>
 </div>
 
-<div class="card p-5 shadow border-0 text-center">
+<div class="card p-5 shadow border-0 text-center mb-4">
     @if (Model.LogExists)
     {
         <div class="alert alert-success mb-4 text-start">
@@ -32,11 +32,13 @@
     }
 </div>
 
-<div class="mt-4">
-    <h3>Heroes JSON</h3>
+<div class="card p-4 shadow border-0 text-center">
+    <h3 class="fw-bold">Heroes JSON</h3>
     <p>Download the current state of all heroes in JSON format.</p>
     
-    <a asp-page-handler="DownloadJson" class="btn btn-primary">
-        📥 Download Heroes (JSON)
-    </a>
+    <div>
+        <a asp-page-handler="DownloadJson" class="btn btn-dark fw-bold px-4 py-2">
+            📥 Download Heroes (JSON)
+        </a>
+    </div>
 </div>
