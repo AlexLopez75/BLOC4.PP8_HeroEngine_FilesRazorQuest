@@ -7,37 +7,336 @@
 ============== BATTLE LOG - Round 1 ===============
 [HERO] Activating 'Magic Shield' [RARE]...
 [HERO] Helo shields itself from 40 damage.
-[ENEMY] Elite 1 receives 0 damage -> Defense: 20 -> Actual damage: 0 | 250/250
-[HERO] Portet attacks! -> Base damage: 450, Multiplier: 3 -> Deals 1350 damage.
-[ENEMY] Elite 1 receives 1350 damage -> Defense: 20 -> Actual damage: 1330 | 0/250
-[HERO] Molen attacks! Deals 974 damage.
-[ENEMY] Elite 2 receives 974 damage -> Defense: 20 -> Actual damage: 954 | 0/250
-[ENEMY] Boss 3 attacks! Deals 80 damage.
-[HERO] Helo receives 80 damage -> Defense: 11381 -> Actual damage: 0 | 74256/74256
-[ENEMY] Minion 4 attacks! Deals 20 damage.
-[HERO] Helo receives 20 damage -> Defense: 11381 -> Actual damage: 0 | 74256/74256
+[ENEMY] Boss 1 receives 0 damage -> Defense: 40 -> Actual damage: 0 | 600/600
+[ENEMY] Boss 1 attacks! Deals 80 damage.
+[HERO] Helo receives 80 damage -> Defense: 479 -> Actual damage: 0 | 336/336
+[HERO] Portet attacks! -> Base damage: 19, Multiplier: 3 -> Deals 57 damage.
+[ENEMY] Boss 1 receives 57 damage -> Defense: 40 -> Actual damage: 17 | 583/600
+[HERO] Molen attacks! Deals 39 damage.
+[ENEMY] Boss 1 receives 39 damage -> Defense: 40 -> Actual damage: 0 | 583/600
 
 ============== BATTLE LOG - Round 2 ===============
 [HERO] Activating 'Magic Shield' [RARE]...
 [HERO] Helo shields itself from 40 damage.
-[ENEMY] Boss 3 receives 0 damage -> Defense: 40 -> Actual damage: 0 | 600/600
-[HERO] Portet attacks! -> Base damage: 450, Multiplier: 3 -> Deals 1350 damage.
-[ENEMY] Boss 3 receives 1350 damage -> Defense: 40 -> Actual damage: 1310 | 0/600
-[HERO] Molen attacks! Deals 974 damage.
-[ENEMY] Minion 4 receives 974 damage -> Defense: 10 -> Actual damage: 964 | 0/100
+[ENEMY] Boss 1 receives 0 damage -> Defense: 40 -> Actual damage: 0 | 583/600
+[ENEMY] Boss 1 attacks! Deals 80 damage.
+[HERO] Helo receives 80 damage -> Defense: 519 -> Actual damage: 0 | 336/336
+[HERO] Portet attacks! -> Base damage: 19, Multiplier: 3 -> Deals 57 damage.
+[ENEMY] Boss 1 receives 57 damage -> Defense: 40 -> Actual damage: 17 | 566/600
+[HERO] Molen attacks! Deals 39 damage.
+[ENEMY] Boss 1 receives 39 damage -> Defense: 40 -> Actual damage: 0 | 566/600
+
+============== BATTLE LOG - Round 3 ===============
+[HERO] Activating 'Fireball' [COMMON]...
+[HERO] Helo deals massive damage -> Total damage: 51
+[ENEMY] Boss 1 receives 51 damage -> Defense: 40 -> Actual damage: 11 | 555/600
+[ENEMY] Boss 1 attacks! Deals 80 damage.
+[HERO] Helo receives 80 damage -> Defense: 519 -> Actual damage: 0 | 336/336
+[HERO] Portet attacks! -> Base damage: 19, Multiplier: 3 -> Deals 57 damage.
+[ENEMY] Boss 1 receives 57 damage -> Defense: 40 -> Actual damage: 17 | 538/600
+[HERO] Molen attacks! Deals 39 damage.
+[ENEMY] Boss 1 receives 39 damage -> Defense: 40 -> Actual damage: 0 | 538/600
+
+============== BATTLE LOG - Round 4 ===============
+[HERO] Activating 'Fireball' [COMMON]...
+[HERO] Helo deals massive damage -> Total damage: 51
+[ENEMY] Boss 1 receives 51 damage -> Defense: 40 -> Actual damage: 11 | 527/600
+[ENEMY] Boss 1 attacks! Deals 80 damage.
+[HERO] Helo receives 80 damage -> Defense: 519 -> Actual damage: 0 | 336/336
+[HERO] Portet attacks! -> Base damage: 19, Multiplier: 3 -> Deals 57 damage.
+[ENEMY] Boss 1 receives 57 damage -> Defense: 40 -> Actual damage: 17 | 510/600
+[HERO] Molen attacks! Deals 39 damage.
+[ENEMY] Boss 1 receives 39 damage -> Defense: 40 -> Actual damage: 0 | 510/600
+
+============== BATTLE LOG - Round 5 ===============
+[HERO] Activating 'Fireball' [COMMON]...
+[HERO] Helo deals massive damage -> Total damage: 51
+[ENEMY] Boss 1 receives 51 damage -> Defense: 40 -> Actual damage: 11 | 499/600
+[ENEMY] Boss 1 attacks! Deals 80 damage.
+[HERO] Helo receives 80 damage -> Defense: 519 -> Actual damage: 0 | 336/336
+[HERO] Portet attacks! -> Base damage: 19, Multiplier: 3 -> Deals 57 damage.
+[ENEMY] Boss 1 receives 57 damage -> Defense: 40 -> Actual damage: 17 | 482/600
+[HERO] Molen attacks! Deals 39 damage.
+[ENEMY] Boss 1 receives 39 damage -> Defense: 40 -> Actual damage: 0 | 482/600
+
+============== BATTLE LOG - Round 6 ===============
+[HERO] Activating 'Fireball' [COMMON]...
+[HERO] Helo deals massive damage -> Total damage: 51
+[ENEMY] Boss 1 receives 51 damage -> Defense: 40 -> Actual damage: 11 | 471/600
+[ENEMY] Boss 1 attacks! Deals 80 damage.
+[HERO] Helo receives 80 damage -> Defense: 519 -> Actual damage: 0 | 336/336
+[HERO] Portet attacks! -> Base damage: 19, Multiplier: 3 -> Deals 57 damage.
+[ENEMY] Boss 1 receives 57 damage -> Defense: 40 -> Actual damage: 17 | 454/600
+[HERO] Molen attacks! Deals 39 damage.
+[ENEMY] Boss 1 receives 39 damage -> Defense: 40 -> Actual damage: 0 | 454/600
+
+============== BATTLE LOG - Round 7 ===============
+[HERO] Activating 'Fireball' [COMMON]...
+[HERO] Helo deals massive damage -> Total damage: 51
+[ENEMY] Boss 1 receives 51 damage -> Defense: 40 -> Actual damage: 11 | 443/600
+[ENEMY] Boss 1 attacks! Deals 80 damage.
+[HERO] Helo receives 80 damage -> Defense: 519 -> Actual damage: 0 | 336/336
+[HERO] Portet attacks! -> Base damage: 19, Multiplier: 3 -> Deals 57 damage.
+[ENEMY] Boss 1 receives 57 damage -> Defense: 40 -> Actual damage: 17 | 426/600
+[HERO] Molen attacks! Deals 39 damage.
+[ENEMY] Boss 1 receives 39 damage -> Defense: 40 -> Actual damage: 0 | 426/600
+
+============== BATTLE LOG - Round 8 ===============
+[HERO] Activating 'Fireball' [COMMON]...
+[HERO] Helo deals massive damage -> Total damage: 51
+[ENEMY] Boss 1 receives 51 damage -> Defense: 40 -> Actual damage: 11 | 415/600
+[ENEMY] Boss 1 attacks! Deals 80 damage.
+[HERO] Helo receives 80 damage -> Defense: 519 -> Actual damage: 0 | 336/336
+[HERO] Portet attacks! -> Base damage: 19, Multiplier: 3 -> Deals 57 damage.
+[ENEMY] Boss 1 receives 57 damage -> Defense: 40 -> Actual damage: 17 | 398/600
+[HERO] Molen attacks! Deals 39 damage.
+[ENEMY] Boss 1 receives 39 damage -> Defense: 40 -> Actual damage: 0 | 398/600
+
+============== BATTLE LOG - Round 9 ===============
+[HERO] Activating 'Fireball' [COMMON]...
+[HERO] Helo deals massive damage -> Total damage: 51
+[ENEMY] Boss 1 receives 51 damage -> Defense: 40 -> Actual damage: 11 | 387/600
+[ENEMY] Boss 1 attacks! Deals 80 damage.
+[HERO] Helo receives 80 damage -> Defense: 519 -> Actual damage: 0 | 336/336
+[HERO] Portet attacks! -> Base damage: 19, Multiplier: 3 -> Deals 57 damage.
+[ENEMY] Boss 1 receives 57 damage -> Defense: 40 -> Actual damage: 17 | 370/600
+[HERO] Molen attacks! Deals 39 damage.
+[ENEMY] Boss 1 receives 39 damage -> Defense: 40 -> Actual damage: 0 | 370/600
+
+============== BATTLE LOG - Round 10 ===============
+[HERO] Activating 'Fireball' [COMMON]...
+[HERO] Helo deals massive damage -> Total damage: 51
+[ENEMY] Boss 1 receives 51 damage -> Defense: 40 -> Actual damage: 11 | 359/600
+[ENEMY] Boss 1 attacks! Deals 80 damage.
+[HERO] Helo receives 80 damage -> Defense: 519 -> Actual damage: 0 | 336/336
+[HERO] Portet attacks! -> Base damage: 19, Multiplier: 3 -> Deals 57 damage.
+[ENEMY] Boss 1 receives 57 damage -> Defense: 40 -> Actual damage: 17 | 342/600
+[HERO] Molen attacks! Deals 39 damage.
+[ENEMY] Boss 1 receives 39 damage -> Defense: 40 -> Actual damage: 0 | 342/600
+
+============== BATTLE LOG - Round 11 ===============
+[HERO] Activating 'Fireball' [COMMON]...
+[HERO] Helo deals massive damage -> Total damage: 51
+[ENEMY] Boss 1 receives 51 damage -> Defense: 40 -> Actual damage: 11 | 331/600
+[ENEMY] Boss 1 attacks! Deals 80 damage.
+[HERO] Helo receives 80 damage -> Defense: 519 -> Actual damage: 0 | 336/336
+[HERO] Portet attacks! -> Base damage: 19, Multiplier: 3 -> Deals 57 damage.
+[ENEMY] Boss 1 receives 57 damage -> Defense: 40 -> Actual damage: 17 | 314/600
+[HERO] Molen attacks! Deals 39 damage.
+[ENEMY] Boss 1 receives 39 damage -> Defense: 40 -> Actual damage: 0 | 314/600
+
+============== BATTLE LOG - Round 12 ===============
+[HERO] Activating 'Fireball' [COMMON]...
+[HERO] Helo deals massive damage -> Total damage: 51
+[ENEMY] Boss 1 receives 51 damage -> Defense: 40 -> Actual damage: 11 | 303/600
+[ENEMY] Boss 1 attacks! Deals 80 damage.
+[HERO] Helo receives 80 damage -> Defense: 519 -> Actual damage: 0 | 336/336
+[HERO] Portet attacks! -> Base damage: 19, Multiplier: 3 -> Deals 57 damage.
+[ENEMY] Boss 1 receives 57 damage -> Defense: 40 -> Actual damage: 17 | 286/600
+[HERO] Molen attacks! Deals 39 damage.
+[ENEMY] Boss 1 receives 39 damage -> Defense: 40 -> Actual damage: 0 | 286/600
+
+============== BATTLE LOG - Round 13 ===============
+[HERO] Helo can't cast 'Fireball' beacuse it doesn't have enough mana! (Needs 5, has 0)
+[HERO] Helo attacks! Deals 26 damage.
+[ENEMY] Boss 1 receives 26 damage -> Defense: 40 -> Actual damage: 0 | 286/600
+[ENEMY] Boss 1 attacks! Deals 80 damage.
+[HERO] Helo receives 80 damage -> Defense: 519 -> Actual damage: 0 | 336/336
+[HERO] Portet attacks! -> Base damage: 19, Multiplier: 3 -> Deals 57 damage.
+[ENEMY] Boss 1 receives 57 damage -> Defense: 40 -> Actual damage: 17 | 269/600
+[HERO] Molen attacks! Deals 39 damage.
+[ENEMY] Boss 1 receives 39 damage -> Defense: 40 -> Actual damage: 0 | 269/600
+
+============== BATTLE LOG - Round 14 ===============
+[HERO] Helo can't cast 'Fireball' beacuse it doesn't have enough mana! (Needs 5, has 0)
+[HERO] Helo attacks! Deals 26 damage.
+[ENEMY] Boss 1 receives 26 damage -> Defense: 40 -> Actual damage: 0 | 269/600
+[ENEMY] Boss 1 attacks! Deals 80 damage.
+[HERO] Helo receives 80 damage -> Defense: 519 -> Actual damage: 0 | 336/336
+[HERO] Portet attacks! -> Base damage: 19, Multiplier: 3 -> Deals 57 damage.
+[ENEMY] Boss 1 receives 57 damage -> Defense: 40 -> Actual damage: 17 | 252/600
+[HERO] Molen attacks! Deals 39 damage.
+[ENEMY] Boss 1 receives 39 damage -> Defense: 40 -> Actual damage: 0 | 252/600
+
+============== BATTLE LOG - Round 15 ===============
+[HERO] Helo can't cast 'Fireball' beacuse it doesn't have enough mana! (Needs 5, has 0)
+[HERO] Helo attacks! Deals 26 damage.
+[ENEMY] Boss 1 receives 26 damage -> Defense: 40 -> Actual damage: 0 | 252/600
+[ENEMY] Boss 1 attacks! Deals 80 damage.
+[HERO] Helo receives 80 damage -> Defense: 519 -> Actual damage: 0 | 336/336
+[HERO] Portet attacks! -> Base damage: 19, Multiplier: 3 -> Deals 57 damage.
+[ENEMY] Boss 1 receives 57 damage -> Defense: 40 -> Actual damage: 17 | 235/600
+[HERO] Molen attacks! Deals 39 damage.
+[ENEMY] Boss 1 receives 39 damage -> Defense: 40 -> Actual damage: 0 | 235/600
+
+============== BATTLE LOG - Round 16 ===============
+[HERO] Helo can't cast 'Fireball' beacuse it doesn't have enough mana! (Needs 5, has 0)
+[HERO] Helo attacks! Deals 26 damage.
+[ENEMY] Boss 1 receives 26 damage -> Defense: 40 -> Actual damage: 0 | 235/600
+[ENEMY] Boss 1 attacks! Deals 80 damage.
+[HERO] Helo receives 80 damage -> Defense: 519 -> Actual damage: 0 | 336/336
+[HERO] Portet attacks! -> Base damage: 19, Multiplier: 3 -> Deals 57 damage.
+[ENEMY] Boss 1 receives 57 damage -> Defense: 40 -> Actual damage: 17 | 218/600
+[HERO] Molen attacks! Deals 39 damage.
+[ENEMY] Boss 1 receives 39 damage -> Defense: 40 -> Actual damage: 0 | 218/600
+
+============== BATTLE LOG - Round 17 ===============
+[HERO] Helo can't cast 'Fireball' beacuse it doesn't have enough mana! (Needs 5, has 0)
+[HERO] Helo attacks! Deals 26 damage.
+[ENEMY] Boss 1 receives 26 damage -> Defense: 40 -> Actual damage: 0 | 218/600
+[ENEMY] Boss 1 attacks! Deals 80 damage.
+[HERO] Helo receives 80 damage -> Defense: 519 -> Actual damage: 0 | 336/336
+[HERO] Portet attacks! -> Base damage: 19, Multiplier: 3 -> Deals 57 damage.
+[ENEMY] Boss 1 receives 57 damage -> Defense: 40 -> Actual damage: 17 | 201/600
+[HERO] Molen attacks! Deals 39 damage.
+[ENEMY] Boss 1 receives 39 damage -> Defense: 40 -> Actual damage: 0 | 201/600
+
+============== BATTLE LOG - Round 18 ===============
+[HERO] Helo can't cast 'Fireball' beacuse it doesn't have enough mana! (Needs 5, has 0)
+[HERO] Helo attacks! Deals 26 damage.
+[ENEMY] Boss 1 receives 26 damage -> Defense: 40 -> Actual damage: 0 | 201/600
+[ENEMY] Boss 1 attacks! Deals 80 damage.
+[HERO] Helo receives 80 damage -> Defense: 519 -> Actual damage: 0 | 336/336
+[HERO] Portet attacks! -> Base damage: 19, Multiplier: 3 -> Deals 57 damage.
+[ENEMY] Boss 1 receives 57 damage -> Defense: 40 -> Actual damage: 17 | 184/600
+[HERO] Molen attacks! Deals 39 damage.
+[ENEMY] Boss 1 receives 39 damage -> Defense: 40 -> Actual damage: 0 | 184/600
+
+============== BATTLE LOG - Round 19 ===============
+[HERO] Helo can't cast 'Fireball' beacuse it doesn't have enough mana! (Needs 5, has 0)
+[HERO] Helo attacks! Deals 26 damage.
+[ENEMY] Boss 1 receives 26 damage -> Defense: 40 -> Actual damage: 0 | 184/600
+[ENEMY] Boss 1 attacks! Deals 80 damage.
+[HERO] Helo receives 80 damage -> Defense: 519 -> Actual damage: 0 | 336/336
+[HERO] Portet attacks! -> Base damage: 19, Multiplier: 3 -> Deals 57 damage.
+[ENEMY] Boss 1 receives 57 damage -> Defense: 40 -> Actual damage: 17 | 167/600
+[HERO] Molen attacks! Deals 39 damage.
+[ENEMY] Boss 1 receives 39 damage -> Defense: 40 -> Actual damage: 0 | 167/600
+
+============== BATTLE LOG - Round 20 ===============
+[HERO] Helo can't cast 'Fireball' beacuse it doesn't have enough mana! (Needs 5, has 0)
+[HERO] Helo attacks! Deals 26 damage.
+[ENEMY] Boss 1 receives 26 damage -> Defense: 40 -> Actual damage: 0 | 167/600
+[ENEMY] Boss 1 attacks! Deals 80 damage.
+[HERO] Helo receives 80 damage -> Defense: 519 -> Actual damage: 0 | 336/336
+[HERO] Portet attacks! -> Base damage: 19, Multiplier: 3 -> Deals 57 damage.
+[ENEMY] Boss 1 receives 57 damage -> Defense: 40 -> Actual damage: 17 | 150/600
+[HERO] Molen attacks! Deals 39 damage.
+[ENEMY] Boss 1 receives 39 damage -> Defense: 40 -> Actual damage: 0 | 150/600
+
+============== BATTLE LOG - Round 21 ===============
+[HERO] Helo can't cast 'Fireball' beacuse it doesn't have enough mana! (Needs 5, has 0)
+[HERO] Helo attacks! Deals 26 damage.
+[ENEMY] Boss 1 receives 26 damage -> Defense: 40 -> Actual damage: 0 | 150/600
+[ENEMY] Boss 1 attacks! Deals 80 damage.
+[HERO] Helo receives 80 damage -> Defense: 519 -> Actual damage: 0 | 336/336
+[HERO] Portet attacks! -> Base damage: 19, Multiplier: 3 -> Deals 57 damage.
+[ENEMY] Boss 1 receives 57 damage -> Defense: 40 -> Actual damage: 17 | 133/600
+[HERO] Molen attacks! Deals 39 damage.
+[ENEMY] Boss 1 receives 39 damage -> Defense: 40 -> Actual damage: 0 | 133/600
+
+============== BATTLE LOG - Round 22 ===============
+[HERO] Helo can't cast 'Fireball' beacuse it doesn't have enough mana! (Needs 5, has 0)
+[HERO] Helo attacks! Deals 26 damage.
+[ENEMY] Boss 1 receives 26 damage -> Defense: 40 -> Actual damage: 0 | 133/600
+[ENEMY] Boss 1 attacks! Deals 80 damage.
+[HERO] Helo receives 80 damage -> Defense: 519 -> Actual damage: 0 | 336/336
+[HERO] Portet attacks! -> Base damage: 19, Multiplier: 3 -> Deals 57 damage.
+[ENEMY] Boss 1 receives 57 damage -> Defense: 40 -> Actual damage: 17 | 116/600
+[HERO] Molen attacks! Deals 39 damage.
+[ENEMY] Boss 1 receives 39 damage -> Defense: 40 -> Actual damage: 0 | 116/600
+
+============== BATTLE LOG - Round 23 ===============
+[HERO] Helo can't cast 'Fireball' beacuse it doesn't have enough mana! (Needs 5, has 0)
+[HERO] Helo attacks! Deals 26 damage.
+[ENEMY] Boss 1 receives 26 damage -> Defense: 40 -> Actual damage: 0 | 116/600
+[ENEMY] Boss 1 attacks! Deals 80 damage.
+[HERO] Helo receives 80 damage -> Defense: 519 -> Actual damage: 0 | 336/336
+[HERO] Portet attacks! -> Base damage: 19, Multiplier: 3 -> Deals 57 damage.
+[ENEMY] Boss 1 receives 57 damage -> Defense: 40 -> Actual damage: 17 | 99/600
+[HERO] Molen attacks! Deals 39 damage.
+[ENEMY] Boss 1 receives 39 damage -> Defense: 40 -> Actual damage: 0 | 99/600
+
+============== BATTLE LOG - Round 24 ===============
+[HERO] Helo can't cast 'Fireball' beacuse it doesn't have enough mana! (Needs 5, has 0)
+[HERO] Helo attacks! Deals 26 damage.
+[ENEMY] Boss 1 receives 26 damage -> Defense: 40 -> Actual damage: 0 | 99/600
+[ENEMY] Boss 1 attacks! Deals 80 damage.
+[HERO] Helo receives 80 damage -> Defense: 519 -> Actual damage: 0 | 336/336
+[HERO] Portet attacks! -> Base damage: 19, Multiplier: 3 -> Deals 57 damage.
+[ENEMY] Boss 1 receives 57 damage -> Defense: 40 -> Actual damage: 17 | 82/600
+[HERO] Molen attacks! Deals 39 damage.
+[ENEMY] Boss 1 receives 39 damage -> Defense: 40 -> Actual damage: 0 | 82/600
+
+============== BATTLE LOG - Round 25 ===============
+[HERO] Helo can't cast 'Fireball' beacuse it doesn't have enough mana! (Needs 5, has 0)
+[HERO] Helo attacks! Deals 26 damage.
+[ENEMY] Boss 1 receives 26 damage -> Defense: 40 -> Actual damage: 0 | 82/600
+[ENEMY] Boss 1 attacks! Deals 80 damage.
+[HERO] Helo receives 80 damage -> Defense: 519 -> Actual damage: 0 | 336/336
+[HERO] Portet attacks! -> Base damage: 19, Multiplier: 3 -> Deals 57 damage.
+[ENEMY] Boss 1 receives 57 damage -> Defense: 40 -> Actual damage: 17 | 65/600
+[HERO] Molen attacks! Deals 39 damage.
+[ENEMY] Boss 1 receives 39 damage -> Defense: 40 -> Actual damage: 0 | 65/600
+
+============== BATTLE LOG - Round 26 ===============
+[HERO] Helo can't cast 'Fireball' beacuse it doesn't have enough mana! (Needs 5, has 0)
+[HERO] Helo attacks! Deals 26 damage.
+[ENEMY] Boss 1 receives 26 damage -> Defense: 40 -> Actual damage: 0 | 65/600
+[ENEMY] Boss 1 attacks! Deals 80 damage.
+[HERO] Helo receives 80 damage -> Defense: 519 -> Actual damage: 0 | 336/336
+[HERO] Portet attacks! -> Base damage: 19, Multiplier: 3 -> Deals 57 damage.
+[ENEMY] Boss 1 receives 57 damage -> Defense: 40 -> Actual damage: 17 | 48/600
+[HERO] Molen attacks! Deals 39 damage.
+[ENEMY] Boss 1 receives 39 damage -> Defense: 40 -> Actual damage: 0 | 48/600
+
+============== BATTLE LOG - Round 27 ===============
+[HERO] Helo can't cast 'Fireball' beacuse it doesn't have enough mana! (Needs 5, has 0)
+[HERO] Helo attacks! Deals 26 damage.
+[ENEMY] Boss 1 receives 26 damage -> Defense: 40 -> Actual damage: 0 | 48/600
+[ENEMY] Boss 1 attacks! Deals 80 damage.
+[HERO] Helo receives 80 damage -> Defense: 519 -> Actual damage: 0 | 336/336
+[HERO] Portet attacks! -> Base damage: 19, Multiplier: 3 -> Deals 57 damage.
+[ENEMY] Boss 1 receives 57 damage -> Defense: 40 -> Actual damage: 17 | 31/600
+[HERO] Molen attacks! Deals 39 damage.
+[ENEMY] Boss 1 receives 39 damage -> Defense: 40 -> Actual damage: 0 | 31/600
+
+============== BATTLE LOG - Round 28 ===============
+[HERO] Helo can't cast 'Fireball' beacuse it doesn't have enough mana! (Needs 5, has 0)
+[HERO] Helo attacks! Deals 26 damage.
+[ENEMY] Boss 1 receives 26 damage -> Defense: 40 -> Actual damage: 0 | 31/600
+[ENEMY] Boss 1 attacks! Deals 80 damage.
+[HERO] Helo receives 80 damage -> Defense: 519 -> Actual damage: 0 | 336/336
+[HERO] Portet attacks! -> Base damage: 19, Multiplier: 3 -> Deals 57 damage.
+[ENEMY] Boss 1 receives 57 damage -> Defense: 40 -> Actual damage: 17 | 14/600
+[HERO] Molen attacks! Deals 39 damage.
+[ENEMY] Boss 1 receives 39 damage -> Defense: 40 -> Actual damage: 0 | 14/600
+
+============== BATTLE LOG - Round 29 ===============
+[HERO] Helo can't cast 'Fireball' beacuse it doesn't have enough mana! (Needs 5, has 0)
+[HERO] Helo attacks! Deals 26 damage.
+[ENEMY] Boss 1 receives 26 damage -> Defense: 40 -> Actual damage: 0 | 14/600
+[ENEMY] Boss 1 attacks! Deals 80 damage.
+[HERO] Helo receives 80 damage -> Defense: 519 -> Actual damage: 0 | 336/336
+[HERO] Portet attacks! -> Base damage: 19, Multiplier: 3 -> Deals 57 damage.
+[ENEMY] Boss 1 receives 57 damage -> Defense: 40 -> Actual damage: 17 | 0/600
 
 ======================================================
                    THE HEROES WIN!                    
 ======================================================
 [SYSTEM] The experience of the battle makes the suvivors stronger!
-[SYSTEM] Helo levelled up to Level 11!
-[SYSTEM] Portet levelled up to Level 11!
-[SYSTEM] Molen levelled up to Level 11!
+[SYSTEM] Helo levelled up to Level 4!
+[SYSTEM] Portet levelled up to Level 4!
+[SYSTEM] Molen levelled up to Level 4!
 ======================================================
 
 ======================================================
                   BATTLE STATISTICS                   
 ======================================================
-[SYSTEM] Total damage dealt by the heroes: 1200
-[SYSTEM] Most effective hero (most damage dealt): Portet (850 damage)
-[SYSTEM] Fastest enemy defeated: Elite 1 (defeated in round 1)
+[SYSTEM] Total damage dealt by the heroes: 600
+[SYSTEM] Most effective hero (most damage dealt): Portet (490 damage)
+[SYSTEM] Fastest enemy defeated: Boss 1 (defeated in round 29)
+
+[13:01:39] [SYSTEM] [HERO] Helo equipped 'Fireball'
+[13:01:39] [SYSTEM] [HERO] Helo equipped 'Magic Shield'
+[13:01:39] [SYSTEM] [HERO] Helo equipped 'Heal'

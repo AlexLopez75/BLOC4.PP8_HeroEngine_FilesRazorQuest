@@ -22,11 +22,18 @@ namespace HeroEngine.Web.Pages.Combat
         {
             AvailableHeroes = HeroRepository.GetAll();
 
+            GameConfig config = GameConfigManager.LoadConfig();
+
             if (AvailableHeroes == null || AvailableHeroes.Count == 0)
             {
                 ModelState.AddModelError(string.Empty, "No heroes available for combat.");
                 return Page();
             }
+
+            List<ACharacter> heroTeam = AvailableHeroes
+               .Take(config.MaxHeroesPerBattle)
+               .Cast<ACharacter>()
+               .ToList();
 
             foreach (var hero in AvailableHeroes)
             {
@@ -38,8 +45,6 @@ namespace HeroEngine.Web.Pages.Combat
                 }
 
             }
-
-            List<ACharacter> heroTeam = AvailableHeroes.Cast<ACharacter>().ToList();
 
             Random rnd = new Random();
             int amountOfEnemies = rnd.Next(1, 6);

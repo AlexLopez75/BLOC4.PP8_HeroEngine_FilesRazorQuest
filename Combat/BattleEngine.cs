@@ -18,6 +18,7 @@ public class BattleEngine
     
     private List<ACharacter> _heroes;
     private List<ACharacter> _enemies;
+    private GameConfig _config;
     public int CurrentRound { get; private set; }
     public BattleStatistics Stats { get; private set; }
 
@@ -32,6 +33,7 @@ public class BattleEngine
         _enemies = enemies;
         CurrentRound = 1;
         Stats = new BattleStatistics();
+        _config = GameConfigManager.LoadConfig();
     }
 
     /// <summary>
@@ -40,8 +42,8 @@ public class BattleEngine
     public void StartBattle()
     {
         BattleLogger.Initialize();
-        
-        while (!IsBattleFinished())
+
+        while (!IsBattleFinished() && CurrentRound <= _config.MaxCombatRounds)
         {
             PlayRound();
             CurrentRound++;

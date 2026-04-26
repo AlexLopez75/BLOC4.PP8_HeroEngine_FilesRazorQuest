@@ -97,3 +97,32 @@
         </div>
     }
 </div>
+
+<div class="card mt-4">
+    <div class="card-header bg-dark text-white">
+        <h5>Configuración del Juego (XML)</h5>
+    </div>
+    <div class="card-body">
+        <form method="post" asp-page-handler="SaveConfig">
+            <div class="row">
+                <div class="col-md-3 mb-3">
+                    <label class="form-label">Level Up Stats Multiplier</label>
+                    <input type="number" step="0.01" class="form-control" asp-for="CurrentConfig.LevelMultiplier" />
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label class="form-label">Critical Hit Chance</label>
+                    <input type="number" step="0.01" class="form-control" asp-for="CurrentConfig.CriticalHitChance" />
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label class="form-label">Max Combat Rounds</label>
+                    <input type="number" class="form-control" asp-for="CurrentConfig.MaxCombatRounds" />
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label class="form-label">Max Heroes</label>
+                    <input type="number" class="form-control" asp-for="CurrentConfig.MaxHeroesPerBattle" />
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success">Guardar Configuración</button>
+        </form>
+    </div>
+</div>
