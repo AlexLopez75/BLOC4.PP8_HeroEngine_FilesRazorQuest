@@ -18,9 +18,9 @@ public class BattleEngine
     
     private List<ACharacter> _heroes;
     private List<ACharacter> _enemies;
-    private int _countRound;
-    private BattleStatistics _stats;
-    
+    public int CurrentRound { get; private set; }
+    public BattleStatistics Stats { get; private set; }
+
     /// <summary>
     /// Initializes a new instance of the <see cref="BattleEngine"/> class with the specified combatants.
     /// </summary>
@@ -30,8 +30,8 @@ public class BattleEngine
     {
         _heroes = heroes;
         _enemies = enemies;
-        _countRound = 1;
-        _stats = new BattleStatistics();
+        CurrentRound = 1;
+        Stats = new BattleStatistics();
     }
 
     /// <summary>
@@ -44,7 +44,7 @@ public class BattleEngine
         while (!IsBattleFinished())
         {
             PlayRound();
-            _countRound++;
+            CurrentRound++;
         }
         AnounceWinner();
     }
@@ -54,7 +54,7 @@ public class BattleEngine
     /// </summary>
     private void PlayRound()
     {
-        BattleLogger.Log(string.Format(roundMSG, _countRound));
+        BattleLogger.Log(string.Format(roundMSG, CurrentRound));
         
         var allCombatants = new List<ACharacter>();
         allCombatants.AddRange(_heroes.Where(h => !h.IsDefeated));
@@ -76,9 +76,9 @@ public class BattleEngine
                 int hpBefore = target.CurrentHp;
                 target.TakeDamage(damage);
                 int actualDamageDealt = hpBefore - target.CurrentHp;
-                _stats.RecordDamage(combatant, actualDamageDealt);
+                Stats.RecordDamage(combatant, actualDamageDealt);
                 
-                if (target.IsDefeated) _stats.RecordEnemyDefeat(target, _countRound);
+                if (target.IsDefeated) Stats.RecordEnemyDefeat(target, CurrentRound);
             }
         }
     }
@@ -142,6 +142,6 @@ public class BattleEngine
         }
         BattleLogger.Log(separator);
         
-        _stats.PrintStatistics();
+        Stats.PrintStatistics();
     }
 }
