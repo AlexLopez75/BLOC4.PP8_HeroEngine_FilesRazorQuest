@@ -13,6 +13,7 @@ public static class BattleLogger
 
     private static readonly string PublicLogPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Data", "battleLog.txt");
     private static readonly string PrivateLogPath = Path.Combine(Directory.GetCurrentDirectory(), "Data", "battleLog.txt");
+
     public static List<string> CurrentBattleLogs { get; private set; } = new List<string>();
 
     /// <summary>
@@ -23,9 +24,8 @@ public static class BattleLogger
     {
         CurrentBattleLogs.Clear();
 
-        EnsureFileIsClean(PublicLogPath);
-        EnsureFileIsClean(PrivateLogPath);
-
+        Log("");
+        Log("");
         Log(separator);
         Log(logInitializeMSG);
         Log(battleStartMSG);
@@ -41,13 +41,7 @@ public static class BattleLogger
         CurrentBattleLogs.Add(message);
 
         string logEntry = $"[{DateTime.Now:HH:mm:ss}] {message}";
-        TXTManager.Apppend(PublicLogPath, logEntry);
-        TXTManager.Apppend(PrivateLogPath, logEntry);
-    }
-    private static void EnsureFileIsClean(string path)
-    {
-        string directory = Path.GetDirectoryName(path);
-        if (!Directory.Exists(directory)) Directory.CreateDirectory(directory);
-        File.WriteAllText(path, string.Empty);
+        TXTManager.Append(PublicLogPath, logEntry);
+        TXTManager.Append(PrivateLogPath, logEntry);
     }
 }

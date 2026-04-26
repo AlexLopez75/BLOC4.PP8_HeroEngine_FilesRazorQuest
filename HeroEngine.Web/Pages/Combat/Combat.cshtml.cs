@@ -56,14 +56,14 @@ namespace HeroEngine.Web.Pages.Combat
 
                 switch (enemyType)
                 {
-                    case 1:
-                        newEnemy = new Minion($"Minion {i}");
-                        break;
                     case 2:
                         newEnemy = new Elite($"Elite {i}");
                         break;
-                    default:
+                    case 3:
                         newEnemy = new Boss($"Boss {i}");
+                        break;
+                    default:
+                        newEnemy = new Minion($"Minion {i}");
                         break;
                 }
 
@@ -75,22 +75,13 @@ namespace HeroEngine.Web.Pages.Combat
             BattleEngine engine = new BattleEngine(heroTeam, EnemyTeam);
             engine.StartBattle();
 
-            bool heroesWon = heroTeam.Any(h => !h.IsDefeated);
+            bool heroesWon = EnemyTeam.All(e => e.IsDefeated);
 
             BattleResult result = engine.Stats.GenerateCombatResult(heroTeam, EnemyTeam, heroesWon, engine.CurrentRound);
             CsvStatsWriter.AppendCombatStats(result);
 
             BattleLogs = BattleLogger.CurrentBattleLogs.ToList();
-            string dataFolderPath = Path.Combine(Directory.GetCurrentDirectory(), "Data");
-
-            if (!Directory.Exists(dataFolderPath))
-            {
-                Directory.CreateDirectory(dataFolderPath);
-            }
-
-            string logFilePath = Path.Combine(dataFolderPath, "battleLog.txt");
-            System.IO.File.WriteAllLines(logFilePath, BattleLogs);
-
+            
             return Page();
         }
     }

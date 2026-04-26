@@ -1,3 +1,195 @@
+# ⚔️ Hero Engine - RPG Battle System
+
+✅ **Estat de la versió:** Totes les *issues* han estat tancades i la Pull Request ha estat aprovada i integrada per la branca `razor-files`.
+
+Aquest repositori conté el motor de joc de rol "Hero Engine", implementat en C# amb .NET Core i ASP.NET Core Razor Pages. Inclou la gestió de jerarquies de personatges, sistema de combat per torns amb IA, analítiques de partides i gestió completa de fitxers.
+
+---
+
+## 📂 Estructura del Projecte
+
+El projecte està dividit en diferents capes per respectar els principis d'arquitectura neta i responsabilitat única (SRP):
+
+* **`HeroEngine.Core/`**: Conté la lògica de negoci.
+    * `Models/`: Jerarquia de classes (`AHero`, `Mage`, `Warrior`, `Rogue`, `Ability`, `Enemy`).
+    * `Combat/`: Motor de batalla (`BattleEngine`) i estadístiques (`BattleStatistics`).
+    * `Data/`: Escriptura i lectura de fitxers, integració amb CSV i JSON (`CsvStatsWriter`).
+    * `Analytics/`: Consultes LINQ per processar estadístiques (`HeroAnalytics`).
+* **`HeroEngine.Web/`**: La interfície d'usuari web (Frontend).
+    * `Pages/`: Vistes de Razor Pages (ex. `/Stats`, `/Files`).
+    * `wwwroot/`: Recursos estàtics (CSS, imatges, JS).
+* **`Data/`**: Carpeta a l'arrel del projecte on es generen i guarden els fitxers de registre i configuració.
+
+## 🚀 Instruccions d'Execució
+
+Per fer funcionar el projecte en un entorn de desenvolupament local, segueix aquests passos:
+
+1.  **Clonar el repositori** i assegurar-se d'estar a la branca principal (on s'ha fusionat `razor-files`).
+2.  **Obrir la solució** amb Visual Studio 2022 o Visual Studio Code.
+3.  **Restaurar paquets:** Obre la terminal a l'arrel del projecte i executa:
+    ```bash
+    dotnet restore
+    ```
+4.  **Executar el projecte:**
+    Pots prémer `F5` a Visual Studio, o executar la següent comanda a la terminal apuntant al projecte Web:
+    ```bash
+    dotnet run --project HeroEngine.Web
+    ```
+5.  **Accedir a l'aplicació:** Obre el teu navegador web i navega a `https://localhost:5001` (o el port que la teva consola indiqui). Pots visitar les rutes `/Stats` i `/Files` per veure les noves pàgines d'analítica i gestió.
+
+## 📄 Exemples de Fitxers de Dades
+
+El sistema genera i consumeix automàticament els següents fitxers dins de la carpeta `Data/`:
+
+**1. `combat_stats.csv` (Registre de resultats de combats)**
+```bash
+04/26/2026 15:15:19;Partes, Molen, Lowl;Elite 1, Minion 2;Victory;8;350;Lowl
+04/26/2026 15:15:22;Partes, Molen, Lowl;Elite 1;Victory;6;250;Lowl
+04/26/2026 15:15:24;Partes, Molen, Lowl;Elite 1;Victory;5;250;Lowl
+04/26/2026 15:15:26;Partes, Molen, Lowl;Minion 1, Minion 2, Minion 3, Boss 4, Minion 5;Victory;16;1000;Lowl
+04/26/2026 15:15:29;Partes, Molen, Lowl;Minion 1, Elite 2, Minion 3;Victory;5;450;Lowl
+```
+
+**2. `heroes.json` (Dades o configuracions en format JSON)**
+ ```bash
+[
+  {
+    "Name": "Partes",
+    "Type": "Warrior",
+    "Level": 1,
+    "MaxHp": 150,
+    "Power": 30,
+    "Defense": 15,
+    "Armor": 40,
+    "BattleCry": "Mooooo",
+    "MaxMana": 0,
+    "ArchLevel": 0,
+    "Abilities": null,
+    "MultDamage": 0,
+    "NumDaggers": 0
+  },
+  {
+    "Name": "Molen",
+    "Type": "Mage",
+    "Level": 1,
+    "MaxHp": 200,
+    "Power": 20,
+    "Defense": 20,
+    "Armor": 0,
+    "BattleCry": null,
+    "MaxMana": 80,
+    "ArchLevel": 1,
+    "Abilities": [
+      {
+        "Name": "Fireball",
+        "Type": "Attack",
+        "Rarity": "COMMON",
+        "Cost": 5,
+        "AbilityPower": 0
+      },
+      {
+        "Name": "Magic Shield",
+        "Type": "Defense",
+        "Rarity": "RARE",
+        "Cost": 15,
+        "AbilityPower": 0
+      },
+      {
+        "Name": "Heal",
+        "Type": "Healing",
+        "Rarity": "COMMON",
+        "Cost": 5,
+        "AbilityPower": 0
+      }
+    ],
+    "MultDamage": 0,
+    "NumDaggers": 0
+  },
+  {
+    "Name": "Lowl",
+    "Type": "Rogue",
+    "Level": 1,
+    "MaxHp": 170,
+    "Power": 15,
+    "Defense": 25,
+    "Armor": 0,
+    "BattleCry": null,
+    "MaxMana": 0,
+    "ArchLevel": 0,
+    "Abilities": null,
+    "MultDamage": 3,
+    "NumDaggers": 10
+  }
+]
+```
+
+**3. `battleLog.txt` (Log detallat dels esdeveniments per torns)**
+```bash
+======================================================
+               BATTLE LOG INITIALIZED              
+                    BATTLE STARTS                     
+======================================================
+
+
+============== BATTLE LOG - Round 1 ===============
+[HERO] Activating 'Magic Shield' [RARE]...
+[HERO] Molen shields itself from 40 damage.
+[ENEMY] Minion 1 receives 0 damage -> Defense: 10 -> Actual damage: 0 | 100/100
+[HERO] Lowl attacks! -> Base damage: 33, Multiplier: 3 -> Deals 99 damage.
+[ENEMY] Minion 1 receives 99 damage -> Defense: 10 -> Actual damage: 89 | 11/100
+[HERO] Partes attacks! Deals 70 damage.
+[ENEMY] Minion 1 receives 70 damage -> Defense: 10 -> Actual damage: 60 | 0/100
+[ENEMY] Elite 2 attacks! Deals 50 damage.
+[HERO] Partes receives 50 damage. -> Defense: 33, Armor absorbs 40 damage -> Total damage: 0 | HP: 725/725
+[ENEMY] Minion 3 attacks! Deals 20 damage.
+[HERO] Partes receives 20 damage. -> Defense: 33, Armor absorbs 40 damage -> Total damage: 0 | HP: 725/725
+
+============== BATTLE LOG - Round 2 ===============
+[HERO] Activating 'Magic Shield' [RARE]...
+[HERO] Molen shields itself from 40 damage.
+[ENEMY] Elite 2 receives 0 damage -> Defense: 20 -> Actual damage: 0 | 250/250
+[HERO] Lowl attacks! -> Base damage: 33, Multiplier: 3 -> Deals 99 damage.
+[ENEMY] Elite 2 receives 99 damage -> Defense: 20 -> Actual damage: 79 | 171/250
+[HERO] Partes attacks! Deals 70 damage.
+[ENEMY] Elite 2 receives 70 damage -> Defense: 20 -> Actual damage: 50 | 121/250
+[ENEMY] Elite 2 attacks! Deals 50 damage.
+[HERO] Partes receives 50 damage. -> Defense: 33, Armor absorbs 40 damage -> Total damage: 0 | HP: 725/725
+[ENEMY] Minion 3 attacks! Deals 20 damage.
+[HERO] Partes receives 20 damage. -> Defense: 33, Armor absorbs 40 damage -> Total damage: 0 | HP: 725/725
+
+============== BATTLE LOG - Round 3 ===============
+[HERO] Activating 'Fireball' [COMMON]...
+[HERO] Molen deals massive damage -> Total damage: 71
+[ENEMY] Elite 2 receives 71 damage -> Defense: 20 -> Actual damage: 51 | 70/250
+[HERO] Lowl attacks! -> Base damage: 33, Multiplier: 3 -> Deals 99 damage.
+[ENEMY] Elite 2 receives 99 damage -> Defense: 20 -> Actual damage: 79 | 0/250
+[HERO] Partes attacks! Deals 70 damage.
+[ENEMY] Minion 3 receives 70 damage -> Defense: 10 -> Actual damage: 60 | 40/100
+[ENEMY] Minion 3 attacks! Deals 20 damage.
+[HERO] Partes receives 20 damage. -> Defense: 33, Armor absorbs 40 damage -> Total damage: 0 | HP: 725/725
+
+============== BATTLE LOG - Round 4 ===============
+[HERO] Activating 'Fireball' [COMMON]...
+[HERO] Molen deals massive damage -> Total damage: 71
+[ENEMY] Minion 3 receives 71 damage -> Defense: 10 -> Actual damage: 61 | 0/100
+
+======================================================
+                   THE HEROES WIN!                    
+======================================================
+[SYSTEM] The experience of the battle makes the suvivors stronger!
+[SYSTEM] Partes levelled up to Level 6!
+[SYSTEM] Molen levelled up to Level 6!
+[SYSTEM] Lowl levelled up to Level 6!
+======================================================
+
+======================================================
+                  BATTLE STATISTICS                   
+======================================================
+[SYSTEM] Total damage dealt by the heroes: 450
+[SYSTEM] Most effective hero (most damage dealt): Lowl (238 damage)
+[SYSTEM] Fastest enemy defeated: Minion 1 (defeated in round 1)
+```
+---
 # 🛡️ Chapter 1: El Consell dels Herois — Jerarquia de classes
 
 Aquest readme detalla els resultats d'executar un joc de proves a la clase base AHero i les subclasses Warrior, Mage i Rogue. 

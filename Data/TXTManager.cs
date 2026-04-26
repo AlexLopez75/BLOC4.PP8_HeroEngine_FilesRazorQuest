@@ -47,7 +47,7 @@ namespace HeroEngine.Core.Data
 
             return list;
         }
-        public static void Apppend<T>(string filePath, T obj)
+        public static void Append<T>(string filePath, T obj)
         {
             string content = obj?.ToString() ?? string.Empty;
 
