@@ -91,7 +91,7 @@ public class BattleStatistics
             Date = DateTime.Now,
             ParticipatingHeroes = string.Join(", ", heroes.Select(h => h.Name)),
             Enemies = string.Join(", ", enemies.Select(e => e.Name)),
-            Result = isVictory ? "Victoria" : "Derrota",
+            Result = isVictory ? "Victory" : "Defeat",
             TotalRounds = totalRounds,
             TotalDamageDealt = TotalDamageInflicted,
             MostEffectiveHero = GetMostEffectiveHero()

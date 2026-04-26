@@ -1,0 +1,151 @@
+﻿@page
+@model HeroEngine.Web.Pages.Stats.StatsModel
+@{
+    ViewData["Title"] = "Stats";
+}
+
+<div class="container mt-4">
+    <h1 class="mb-4">Statistics of the Game</h1>
+
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-header bg-warning text-dark font-weight-bold">
+                    🏆 Top 3 Heroes (Level)
+                </div>
+                <ul class="list-group list-group-flush">
+                    @if (Model.TopHeroes != null && Model.TopHeroes.Any())
+                    {
+                        for (int i = 0; i < Model.TopHeroes.Count; i++)
+                        {
+                            var hero = Model.TopHeroes[i];
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span><strong>@(i + 1).</strong> @hero.Name (@hero.GetType().Name)</span>
+                                <span class="badge bg-primary rounded-pill">Level @hero.Level</span>
+                            </li>
+                        }
+                    }
+                    else
+                    {
+                        <li class="list-group-item text-muted">No heroes available.</li>
+                    }
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-header bg-info text-white font-weight-bold">
+                    📊 Class Distribution
+                </div>
+                <div class="card-body">
+                    @if (Model.ClassDistribution != null && Model.ClassDistribution.Any())
+                    {
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th>Class</th>
+                                    <th>Percent</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.ClassDistribution)
+                                {
+                                    <tr>
+                                        <td>@item.Key</td>
+                                        <td class="align-middle">
+                                            <div class="progress" style="height: 20px;">
+                                                <div class="progress-bar bg-info" role="progressbar" style="width: @item.Value.ToString("0")%;" aria-valuenow="@item.Value" aria-valuemin="0" aria-valuemax="100">
+                                                    @item.Value.ToString("0")%
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    }
+                    else
+                    {
+                        <p class="text-muted">Insuficient data.</p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-secondary text-white font-weight-bold">
+            ✨ Most Common Abilities (Type)
+        </div>
+        <div class="card-body">
+            @if (Model.AbilityTypeCounts != null && Model.AbilityTypeCounts.Any())
+            {
+                <div class="d-flex flex-wrap gap-3">
+                    @foreach (var ability in Model.AbilityTypeCounts)
+                    {
+                        <span class="badge bg-dark p-2 fs-6">
+                            @ability.Key: <span class="text-warning">@ability.Value equipped</span>
+                        </span>
+                    }
+                </div>
+            }
+            else
+            {
+                <p class="text-muted mb-0">No abilities equipped.</p>
+            }
+        </div>
+    </div>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+            <span class="font-weight-bold">⚔️ Battle History (Last 10)</span>
+            
+            <form method="get" class="d-flex mb-0">
+                <select name="ResultFilter" class="form-select form-select-sm" onchange="this.form.submit()">
+                    <option value="" selected="@(string.IsNullOrEmpty(Model.ResultFilter))">All Results</option>
+                    <option value="VICTORY" selected="@(Model.ResultFilter == "VICTORY")">Victories</option>
+                    <option value="DEFEAT" selected="@(Model.ResultFilter == "DEFEAT")">Defeats</option>
+                </select>
+            </form>
+        </div>
+        <div class="card-body p-0">
+            @if (Model.BattleHistory != null && Model.BattleHistory.Any())
+            {
+                <div class="table-responsive">
+                    <table class="table table-hover mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th class="ps-3">Data</th>
+                                <th>Heroes</th>
+                                <th>Enemies</th>
+                                <th>Rounds</th>
+                                <th>Total Damage</th>
+                                <th>Result</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var battle in Model.BattleHistory)
+                            {
+                                <tr class="@(battle.Result.ToUpper() == "VICTORY" ? "table-success" : (battle.Result.ToUpper() == "DEFEAT" ? "table-danger" : ""))">
+                                    <td class="ps-3">@battle.Date.ToString("g")</td>
+                                    <td>@battle.ParticipatingHeroes</td>
+                                    <td>@battle.Enemies</td>
+                                    <td>@battle.TotalRounds</td>
+                                    <td>@battle.TotalDamageDealt</td>
+                                    <td><strong>@battle.Result</strong></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+            else
+            {
+                <div class="p-3">
+                    <p class="text-muted mb-0">No battle records found or matching the filter.</p>
+                </div>
+            }
+        </div>
+    </div>
+</div>

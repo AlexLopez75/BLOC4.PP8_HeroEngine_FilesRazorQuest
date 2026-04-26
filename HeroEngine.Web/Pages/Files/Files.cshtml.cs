@@ -1,4 +1,5 @@
 using HeroEngine.Core.Combat;
+using HeroEngine.Core.Data;
 using HeroEngine.Core.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -25,37 +26,10 @@ namespace HeroEngine.Web.Pages.Files
 
             if (CsvExists)
             {
-                LoadLastCombatsManually(csvPath);
+                LastCombats = CsvStatsWriter.LoadLastCombatsManually(csvPath);
             }
 
             CurrentConfig = GameConfigManager.LoadConfig();
-        }
-
-        private void LoadLastCombatsManually(string path)
-        {
-            string[] lines = System.IO.File.ReadAllLines(path);
-
-            var dataLines = lines.Skip(1).Where(l => !string.IsNullOrWhiteSpace(l)).ToList();
-
-            var last10 = dataLines.TakeLast(10).Reverse().ToList();
-
-            foreach (var line in last10)
-            {
-                string[] cols = line.Split(';');
-                if (cols.Length >= 7)
-                {
-                    LastCombats.Add(new BattleResult
-                    {
-                        Date = DateTime.Parse(cols[0], CultureInfo.InvariantCulture),
-                        ParticipatingHeroes = cols[1],
-                        Enemies = cols[2],
-                        Result = cols[3],
-                        TotalRounds = int.Parse(cols[4]),
-                        TotalDamageDealt = int.Parse(cols[5]),
-                        MostEffectiveHero = cols[6]
-                    });
-                }
-            }
         }
 
         public IActionResult OnGetDownloadJson()
