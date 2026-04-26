@@ -1,4 +1,5 @@
 using HeroEngine.Core.Combat;
+using HeroEngine.Core.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Globalization;
@@ -10,6 +11,9 @@ namespace HeroEngine.Web.Pages.Files
         public bool LogExists { get; set; }
         public bool CsvExists { get; set; }
         public List<BattleResult> LastCombats { get; set; } = new List<BattleResult>();
+        
+        [BindProperty]
+        public GameConfig CurrentConfig { get; set; }
 
         public void OnGet()
         {
@@ -23,6 +27,8 @@ namespace HeroEngine.Web.Pages.Files
             {
                 LoadLastCombatsManually(csvPath);
             }
+
+            CurrentConfig = GameConfigManager.LoadConfig();
         }
 
         private void LoadLastCombatsManually(string path)
@@ -84,6 +90,11 @@ namespace HeroEngine.Web.Pages.Files
                 byte[] fileBytes = System.IO.File.ReadAllBytes(filePath);
                 return File(fileBytes, "text/csv", "combat_stats.csv");
             }
+            return RedirectToPage();
+        }
+        public IActionResult OnPostSaveConfig()
+        {
+            GameConfigManager.SaveConfig(CurrentConfig);
             return RedirectToPage();
         }
     }
