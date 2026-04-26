@@ -14,4 +14,8 @@
     <None Remove="HeroEngine.Web\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="CsvHelper" Version="33.1.0" />
+  </ItemGroup>
+
 </Project>

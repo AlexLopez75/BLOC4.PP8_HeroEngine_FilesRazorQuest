@@ -31,6 +31,12 @@ namespace HeroEngine.Web.Pages.Combat
             foreach (var hero in AvailableHeroes)
             {
                 hero.CurrentHp = hero.MaxHp;
+
+                if (hero is Mage mage)
+                {
+                    mage.CurrentMana = mage.MaxMana;
+                }
+
             }
 
             List<ACharacter> heroTeam = AvailableHeroes.Cast<ACharacter>().ToList();
@@ -63,6 +69,11 @@ namespace HeroEngine.Web.Pages.Combat
 
             BattleEngine engine = new BattleEngine(heroTeam, EnemyTeam);
             engine.StartBattle();
+
+            bool heroesWon = heroTeam.Any(h => !h.IsDefeated);
+
+            BattleResult result = engine.Stats.GenerateCombatResult(heroTeam, EnemyTeam, heroesWon, engine.CurrentRound);
+            CsvStatsWriter.AppendCombatStats(result);
 
             BattleLogs = BattleLogger.CurrentBattleLogs.ToList();
             string dataFolderPath = Path.Combine(Directory.GetCurrentDirectory(), "Data");

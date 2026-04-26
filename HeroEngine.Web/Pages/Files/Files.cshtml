@@ -42,3 +42,58 @@
         </a>
     </div>
 </div>
+
+<div class="card p-4 shadow border-0 text-center mt-4">
+    <h3 class="fw-bold">Combat Statistics (CSV)</h3>
+    <p>Download the historical combat statistics or view the latest 10 matches.</p>
+    
+    @if (Model.CsvExists)
+    {
+        <form method="post" asp-page-handler="DownloadCsv" class="mb-4">
+            <button type="submit" class="btn btn-success fw-bold px-4 py-2">
+                📊 Download combat_stats.csv
+            </button>
+        </form>
+
+        <h5 class="text-start text-success border-bottom border-success pb-2">Last 10 Combats</h5>
+        <div class="table-responsive">
+            <table class="table table-dark table-striped table-hover mt-3 text-start">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Heroes</th>
+                        <th>Enemies</th>
+                        <th>Result</th>
+                        <th>Rounds</th>
+                        <th>Damage</th>
+                        <th>MVP</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var combat in Model.LastCombats)
+                    {
+                        <tr>
+                            <td>@combat.Date.ToString("g")</td>
+                            <td>@combat.ParticipatingHeroes</td>
+                            <td>@combat.Enemies</td>
+                            <td>
+                                <span class="badge @(combat.Result == "Victoria" ? "bg-primary" : "bg-danger")">
+                                    @combat.Result
+                                </span>
+                            </td>
+                            <td>@combat.TotalRounds</td>
+                            <td>@combat.TotalDamageDealt</td>
+                            <td>@combat.MostEffectiveHero</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-secondary">
+            No combat statistics recorded yet. Play a simulation first!
+        </div>
+    }
+</div>

@@ -68,4 +68,33 @@ public class BattleStatistics
             BattleLogger.Log(String.Format(fastestDefeatMSG, fastestDefeat.Key, fastestDefeat.Value));
         }
     }
+
+    /// <summary>
+    /// Gets the name of the hero who dealt the most damage.
+    /// </summary>
+    public string GetMostEffectiveHero()
+    {
+        if (HeroDamage.Count > 0)
+        {
+            return HeroDamage.OrderByDescending(x => x.Value).First().Key;
+        }
+        return "Ninguno";
+    }
+
+    /// <summary>
+    /// Generates the BattleResult object needed for the CSV Writer.
+    /// </summary>
+    public BattleResult GenerateCombatResult(List<ACharacter> heroes, List<ACharacter> enemies, bool isVictory, int totalRounds)
+    {
+        return new BattleResult
+        {
+            Date = DateTime.Now,
+            ParticipatingHeroes = string.Join(", ", heroes.Select(h => h.Name)),
+            Enemies = string.Join(", ", enemies.Select(e => e.Name)),
+            Result = isVictory ? "Victoria" : "Derrota",
+            TotalRounds = totalRounds,
+            TotalDamageDealt = TotalDamageInflicted,
+            MostEffectiveHero = GetMostEffectiveHero()
+        };
+    }
 }
